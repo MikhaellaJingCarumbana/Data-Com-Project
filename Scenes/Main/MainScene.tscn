@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dyirb4fj4i5un"]
 
-[ext_resource type="Shader" path="res://Scenes/Main/StarNest.gdshader" id="1_1s7xo"]
+[ext_resource type="Shader" path="res://Shaders/StarNest.gdshader" id="1_1s7xo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_04ypf"]
 resource_local_to_scene = true

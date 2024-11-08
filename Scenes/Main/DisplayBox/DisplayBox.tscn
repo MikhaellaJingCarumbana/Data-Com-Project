@@ -1,0 +1,88 @@
+[gd_scene load_steps=6 format=3 uid="uid://bi1cfmrmk5258"]
+
+[sub_resource type="Animation" id="Animation_crp8v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("High_Straight:points")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedVector2Array(0, 22, 0, 22)]
+}
+
+[sub_resource type="Animation" id="Animation_e4ay4"]
+resource_name = "High_Straight"
+length = 0.24
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("High_Straight:points")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [PackedVector2Array(0, 22, 0, 22, 1.40059e-08, 22), PackedVector2Array(0, 22, 0, 22, 1.40059e-08, 22, 27.2577, 22)]
+}
+
+[sub_resource type="Animation" id="Animation_1l7q3"]
+resource_name = "low_straight"
+length = 0.24
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("High_Straight:points")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [PackedVector2Array(0, 56), PackedVector2Array(0, 56, 27.4259, 56)]
+}
+
+[sub_resource type="Animation" id="Animation_p5y5w"]
+resource_name = "High-to-Low"
+length = 0.24
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("High_Straight:points")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [PackedVector2Array(0, 22, 0, 22), PackedVector2Array(0, 22, 0, 22, 28.3418, 22), PackedVector2Array(0, 22, 0, 22, 28.3418, 22, 28.3418, 56)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iad2d"]
+_data = {
+"High-to-Low": SubResource("Animation_p5y5w"),
+"High_Straight": SubResource("Animation_e4ay4"),
+"RESET": SubResource("Animation_crp8v"),
+"low_straight": SubResource("Animation_1l7q3")
+}
+
+[node name="DisplayBox" type="Sprite2D"]
+
+[node name="High_Straight" type="Line2D" parent="."]
+position = Vector2(0.0558045, -24)
+scale = Vector2(1.09182, 1)
+points = PackedVector2Array(0, 22, 0, 22)
+width = 1.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="High_Straight"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_iad2d")
+}
+
+[node name="Line2D2" type="Line2D" parent="."]

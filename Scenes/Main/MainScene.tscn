@@ -7,10 +7,10 @@ resource_local_to_scene = true
 shader = ExtResource("1_q0tly")
 shader_parameter/bottom_color = Color(0, 0, 0.894118, 1)
 shader_parameter/top_color = Color(0, 0, 0.768627, 1)
-shader_parameter/wave_amp = 0.056
-shader_parameter/wave_size = 1.303
-shader_parameter/wave_time_mul = 0.441
-shader_parameter/total_phases = 3
+shader_parameter/wave_amp = 0.084
+shader_parameter/wave_size = 1.505
+shader_parameter/wave_time_mul = 0.334
+shader_parameter/total_phases = 5
 
 [node name="MainScene" type="Control"]
 layout_mode = 3
